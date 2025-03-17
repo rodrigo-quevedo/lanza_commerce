@@ -1,6 +1,6 @@
 
 
-function Main() {
+function Home() {
     return (
         <main>
             
@@ -8,4 +8,4 @@ function Main() {
     )
 }
 
-export default Main;
+export default Home;
