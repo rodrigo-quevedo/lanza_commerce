@@ -2,13 +2,13 @@ export default function HeaderNavbar(){
 
     return (
         <nav className="flex gap-6">
-            <a href="#category1" className="text-gray-700 hover:text-black font-medium">
+            <a href="#category1" className=" hover:text-black font-medium">
                 Category 1
             </a>
-            <a href="#category2" className="text-gray-700 hover:text-black font-medium">
+            <a href="#category2" className=" hover:text-black font-medium">
                 Category 2
             </a>
-            <a href="#category3" className="text-gray-700 hover:text-black font-medium">
+            <a href="#category3" className=" hover:text-black font-medium">
                 Category 3
             </a>
             <a
