@@ -3,8 +3,7 @@ export default function Searchbox(){
         <div 
             className="
                 flex flex-1 
-                mx-8 max-w-2xl
-                
+                max-w-2xl
         ">
             
             <input

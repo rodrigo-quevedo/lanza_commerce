@@ -12,22 +12,37 @@ function Header() {
         <header  
             className="
                 bg-[#A61713] text-white
-                border-b border-gray-200">
+                border-b border-gray-200
+                
+        ">
 
             <div 
                 className="
                     flex flex-wrap justify-between items-center 
-                    px-8 py-2 "
-            >
+                    px-8 py-2 
+            ">
                 <Logo/>
 
-                <Searchbox/>
+                <div
+                    className="
+                        flex justify-around flex-1 pb-2.5 px-2
+                        md:pb-0 max-[800px]:px-0
+                ">
+                    <Searchbox/>
 
-                <NotificationsButton />
+                    <div
+                        className="
+                            flex justify-around gap-2
+                            ml-3
+                    ">
+                        <NotificationsButton />
 
-                <ShoppingCartButton/>
+                        <ShoppingCartButton/>
 
-                <UserProfileButton/>
+                        <UserProfileButton/>
+                    </div>
+
+                </div>
             </div>
 
             <HeaderNavbar/>
