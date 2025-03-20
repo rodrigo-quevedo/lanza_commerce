@@ -11,22 +11,26 @@ function Header() {
     return (
         <header  
             className="
-                flex items-center flex-wrap justify-between 
-                px-8 py-4 
                 bg-[#A61713] text-white
                 border-b border-gray-200">
 
-           <Logo/>
+            <div 
+                className="
+                    flex flex-wrap justify-between items-center 
+                    px-8 py-2 "
+            >
+                <Logo/>
 
-           <HeaderNavbar/>
+                <Searchbox/>
 
-            <Searchbox/>
+                <NotificationsButton />
 
-            <NotificationsButton />
+                <ShoppingCartButton/>
 
-            <ShoppingCartButton/>
+                <UserProfileButton/>
+            </div>
 
-            <UserProfileButton/>
+            <HeaderNavbar/>
 
         </header>
     )

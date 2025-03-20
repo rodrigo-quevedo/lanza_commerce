@@ -4,9 +4,9 @@ export default function Logo(){
             <img 
                 src="../../public/logo.png" 
                 alt="Website logo"
-                className="h-30"/>
+                className="h-22"/>
             
-            <h1 className="text-2xl">Lanza Commerce</h1>
+            <h1 className="text-xl mr-20">Lanza Commerce</h1>
         </div>
     )
 }

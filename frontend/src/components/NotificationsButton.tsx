@@ -1,19 +1,28 @@
 import { IoIosNotifications } from "react-icons/io";
+import NotificationNumber from "./NotificationNumber";
 
 
 export default function NotificationsButton(){
     return (
         <button
-        aria-label="Notifications"
-        className="relative w-10 h-10 flex items-center justify-center bg-gray-100 rounded-full hover:bg-gray-200"
-        >
-            <span>
+            aria-label="Notifications"
+            className=" 
+                relative
+                bg-gray-100 rounded-full 
+                hover:bg-gray-200 hover:cursor-pointer
+        ">
+            <span
+                className="
+                    relative 
+                    flex items-center justify-center
+                    w-10 h-10 
+                    text-black
+                    text-2xl
+            ">
                 <IoIosNotifications />
             </span>
 
-            <span className="absolute top-0 right-0 bg-red-600 text-white text-xs w-5 h-5 rounded-full flex items-center justify-center">
-            5
-            </span>
+            <NotificationNumber number={10}/>
 
         </button>
     )

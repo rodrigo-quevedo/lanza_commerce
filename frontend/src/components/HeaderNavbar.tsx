@@ -1,7 +1,12 @@
 export default function HeaderNavbar(){
 
     return (
-        <nav className="flex gap-6">
+        <nav 
+            className="
+                flex justify-around 
+                gap-6 p-3 w-full
+                bg-[#020202]
+        ">
             <a href="#category1" className=" hover:text-black font-medium">
                 Category 1
             </a>
