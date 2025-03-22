@@ -1,33 +1,47 @@
+import { useState } from "react"
+
 export default function Searchbox(){
+
+    let [selected, setSelected] = useState<boolean>(false);
+
     return (
-        <div 
-            className="
+        <form 
+            className={`
                 flex flex-1 
                 max-w-2xl
-        ">
+                transition-transform duration-500
+                ${selected? "scale-105": ''}
+        `}>
             
             <input
                 name="product_search"
                 type="text"
                 placeholder="Search for products..."
-                className="
+                onClick={()=>{setSelected(true)}}
+                onBlur={()=>{setSelected(false)}}
+                className={`
                     flex-grow px-4 py-2 
-                    border border-gray-600 rounded-l-md 
-                    bg-white
+                    rounded-l-md 
+                    bg-white text-black hover:bg-neutral-300 transition-colors
+                    ${selected? " bg-neutral-800! text-white!": ''}
                     focus:outline-none     
-            "/>
+            `}/>
 
             <button
                 type="submit"
-                className="
+                className={`
                     px-4 py-2
-                    bg-[#020202] text-white hover:bg-blue-700
                     font-medium 
                     rounded-r-md
-            ">
+                    bg-[#020202] text-white 
+                    transition-colors
+                    ${selected? " bg-neutral-900": ''}
+                    hover:bg-white hover:text-black hover:scale-105 hover:border-black hover:border-1 hover:rounded-none
+                    hover:cursor-pointer!
+            `}>
                 Search
             </button>
 
-        </div>
+        </form>
     )
 }

@@ -26,7 +26,7 @@ function Header() {
                 <div
                     className="
                         flex justify-around flex-1 pb-2.5 px-2
-                        md:pb-0 max-[800px]:px-0
+                        md:pb-0
                 ">
                     <Searchbox/>
 
