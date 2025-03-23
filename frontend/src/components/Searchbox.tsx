@@ -6,11 +6,13 @@ export default function Searchbox(){
 
     return (
         <form 
+            action="#"
             className={`
                 flex flex-1 
                 max-w-2xl
+                px-2 py-2
                 transition-transform duration-500
-                ${selected? "scale-105": ''}
+                ${selected? "scale-105 md:scale-102": ''}
         `}>
             
             <input
@@ -23,7 +25,7 @@ export default function Searchbox(){
                     flex-grow px-4 py-2 
                     rounded-l-md 
                     bg-white text-black hover:bg-neutral-300 transition-colors
-                    ${selected? " bg-neutral-800! text-white!": ''}
+                    ${selected? " bg-neutral-200!": ''}
                     focus:outline-none     
             `}/>
 

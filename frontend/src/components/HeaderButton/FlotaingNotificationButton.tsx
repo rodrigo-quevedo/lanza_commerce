@@ -1,4 +1,4 @@
-import { ReactNode, useState } from "react";
+import { ReactNode } from "react";
 import NotificationNumber from "./NotificationNumber";
 import ButtonIcon from "./ButtonIcon";
 
@@ -6,22 +6,15 @@ type Props = NotificationNumberProps & {
     iconElement: ReactNode
 }
 
-
-export default function HeaderButtonContainer(
+export default function FlotaingNotificationButton(
     {number, className, iconElement}: Props
 ){
-    
-    const [isHovered, setIsHovered]= useState<boolean>(false);
-    
     return (
         <button
             aria-label="Notifications"
-            onMouseEnter={()=>setIsHovered(true)}
-            onMouseLeave={()=>setIsHovered(false)}
             className=" 
-                mx-2
-                relative
-                bg-transparent rounded-full 
+                absolute bottom-9 right-9
+                bg-neutral-400 rounded-full 
                 hover:bg-gray-200 hover:cursor-pointer hover:scale-110 
                 transition-all hover:transition-all
         ">
@@ -29,7 +22,7 @@ export default function HeaderButtonContainer(
                 {iconElement}
             </ButtonIcon>
 
-            {(number !== 0 && !isHovered)? 
+            {(number !== 0)? 
                 <NotificationNumber number={number} className={className} />
                 : 
                 null
