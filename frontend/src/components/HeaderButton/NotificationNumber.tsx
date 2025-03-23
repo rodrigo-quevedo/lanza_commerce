@@ -1,19 +1,14 @@
-import { IoIosNotifications } from "react-icons/io";
 
-interface ComponentProps {
-    number: number
-}
-
-export default function NotificationNumber({number}: ComponentProps){
+export default function NotificationNumber({number, className}: NotificationNumberProps){
     return (      
         <span 
-            className="
+            className={`
                 absolute bottom-6 left-6 
                 flex items-center justify-center
-                bg-[#72f546]
+                ${className}
                 text-black text-xs
                 w-5 h-5 rounded-full 
-        ">
+        `}>
             {number}
         </span>
     )
