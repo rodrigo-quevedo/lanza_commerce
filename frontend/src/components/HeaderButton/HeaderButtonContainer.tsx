@@ -19,10 +19,10 @@ export default function HeaderButtonContainer(
             onMouseEnter={()=>setIsHovered(true)}
             onMouseLeave={()=>setIsHovered(false)}
             className=" 
-                sm:mx-2
+                mx-0.5 sm:mx-2
                 relative
                 bg-transparent rounded-full 
-                hover:bg-white hover:cursor-pointer hover:scale-110 
+                hover:cursor-pointer hover:scale-105 sm:hover:scale-110
                 transition-all hover:transition-all
         ">
              <ButtonIcon>
