@@ -7,15 +7,16 @@ type Props = NotificationNumberProps & {
 }
 
 export default function FlotaingNotificationButton(
-    {number, className, iconElement}: Props
+    {number, notificationClassName: className, iconElement}: Props
 ){
     return (
+    <>{(number !== 0)? 
         <button
             aria-label="Notifications"
             className=" 
                 absolute bottom-9 right-9
-                bg-neutral-400 rounded-full 
-                hover:bg-gray-200 hover:cursor-pointer hover:scale-110 
+                bg-neutral-300 rounded-full 
+                hover:bg-gray-400 hover:cursor-pointer hover:scale-110 
                 transition-all hover:transition-all
         ">
              <ButtonIcon>
@@ -23,11 +24,13 @@ export default function FlotaingNotificationButton(
             </ButtonIcon>
 
             {(number !== 0)? 
-                <NotificationNumber number={number} className={className} />
+                <NotificationNumber number={number} notificationClassName={className} />
                 : 
                 null
             }
             
         </button>
+    
+    :null}</>
     )
 }

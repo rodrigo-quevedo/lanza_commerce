@@ -7,18 +7,18 @@ export default function Logo(){
             className="
                 flex items-center 
                 mx-auto
-                md:mx-0 
+                md:mx-0
         ">
             <img 
                 src="../../public/logo.png" 
                 alt="Website logo"
-                className="h-16"/>
+                className="h-12 sm:h-16"/>
             
             <h1 
                 className="
                     text-xl
-                    mr-0
-                    md:mr-20
+                    mr-0 md:mr-10
+                    hidden md:inline
             ">
                 Lanza Commerce
             </h1>

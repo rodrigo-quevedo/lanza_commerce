@@ -1,9 +1,9 @@
 
-export default function NotificationNumber({number, className}: NotificationNumberProps){
+export default function NotificationNumber({number, notificationClassName: className}: NotificationNumberProps){
     return (      
         <span 
             className={`
-                absolute bottom-6 left-6 
+                absolute bottom-6 left-6
                 flex items-center justify-center
                 ${className}
                 text-black text-xs

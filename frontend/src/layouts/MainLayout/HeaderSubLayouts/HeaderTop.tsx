@@ -9,7 +9,7 @@ import FlotaingNotificationButton from "../../../components/HeaderButton/Flotain
 
 export default function HeaderTop(){
     return (
-        <div className="flex flex-wrap justify-between items-center 
+        <div className="flex justify-between items-center 
                         px-4 
         ">
             <Logo/>
@@ -17,20 +17,23 @@ export default function HeaderTop(){
             <Searchbox/>
 
             <FlotaingNotificationButton
-                number={0}
-                className="bg-[#f00] text-white" 
+                number={10}
+                notificationClassName="bg-[#f00] text-white" 
                 iconElement={<IoIosNotifications/>}
             />
  
-            <HeaderButtonContainer 
-                number={4} 
-                className="bg-[#fff] text-black font-bold bottom-7 left-7" 
-                iconElement={<FaShoppingCart/>} />
+            <div className="flex justify-end">
+                <HeaderButtonContainer 
+                    number={4} 
+                    notificationClassName="bg-[#fff] text-black font-bold 
+                                            bottom-7 left-7" 
+                    iconElement={<FaShoppingCart/>} />
 
-            <HeaderButtonContainer 
-                number={0} 
-                className="" 
-                iconElement={<FaUserAlt/>} />
+                <HeaderButtonContainer 
+                    number={0} 
+                    notificationClassName="hidden" 
+                    iconElement={<FaUserAlt/>} />
+            </div>
             
 
         </div>

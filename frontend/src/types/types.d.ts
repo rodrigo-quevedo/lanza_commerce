@@ -1,5 +1,5 @@
 type NotificationNumberProps = {
     number: number,
-    className: string
+    notificationClassName: string
 }
 
