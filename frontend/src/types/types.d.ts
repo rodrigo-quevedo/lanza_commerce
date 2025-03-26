@@ -5,7 +5,7 @@ type NotificationNumberProps = {
 
 
 
-interface FakeStoreCathegory {
+interface ProductCategory {
     id: number,
     name: string,
     image: string, 

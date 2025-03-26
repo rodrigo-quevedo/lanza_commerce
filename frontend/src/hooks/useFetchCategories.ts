@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 
 export function useFetchCategories() {
-    const [categories, setCategories] = useState<FakeStoreCathegory[]>([]);
+    const [categories, setCategories] = useState<ProductCategory[]>([]);
     const [fetchState, setFetchState] = useState<FetchState>({
         loading: true, //when component mounts, it is loading untill fetch is done
         error: null
@@ -12,6 +12,8 @@ export function useFetchCategories() {
         .then(res=>res.json())
         
         .then(data=>{
+            if (import.meta.env.DEV) console.log(data)
+            
             setCategories(data);
             setFetchState({
                 error: null,
