@@ -5,9 +5,11 @@ import mapCategory from "../utils/map/mapCategories";
 export default function useFilterCategoriesByInterval(categories: ProductCategory[]) {
     const [ filteredCategories, setFilteredCategories ] = useState<JSX.Element[]>();
     const [intervalExists, setIntervalExists] = useState<boolean>(false);
-    
+    // const [animationStr, setAnimationStr] = useState<string>("");    
+
     let iteration: number = 0;
     let max_iteration: number = 0;
+
     
     useEffect( ()=>{
         if (categories.length === 0 || categories.length <=5 || intervalExists) return;
@@ -21,7 +23,11 @@ export default function useFilterCategoriesByInterval(categories: ProductCategor
         iteration++;
         if (iteration > max_iteration) iteration = 0;
         
-        setFilteredCategories(mapCategory(displayedCategories))    
+        setFilteredCategories(mapCategory(displayedCategories, ""))    
+
+        setTimeout(()=>{
+            setFilteredCategories(mapCategory(displayedCategories," animate-bounce ease-in")) 
+        }, 5000)
         
         //then execute on an interval 
         //I'm having trouble updating 'iteration' and 'max_iteration' by reference (args 
@@ -33,9 +39,21 @@ export default function useFilterCategoriesByInterval(categories: ProductCategor
             if (iteration > max_iteration) iteration = 0;
         
             console.log(`displayedCategories: ${displayedCategories}`)
-            setFilteredCategories(mapCategory(displayedCategories))        
-        }, 3000)
+            setFilteredCategories(mapCategory(displayedCategories, ""))
+            
+            setTimeout(()=>{
+                setFilteredCategories(mapCategory(displayedCategories," animate-pulse")) 
+            }, 5000)
+
+        }, 6000)
+
+        // setInterval(()=>{
+                  
+        // }, 2000)
         
+
+
+
 
         setIntervalExists(true);
         console.log("paso interval")
