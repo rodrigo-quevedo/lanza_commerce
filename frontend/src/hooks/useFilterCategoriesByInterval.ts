@@ -26,7 +26,7 @@ export default function useFilterCategoriesByInterval(categories: ProductCategor
         setFilteredCategories(mapCategory(displayedCategories, ""))    
 
         setTimeout(()=>{
-            setFilteredCategories(mapCategory(displayedCategories," animate-bounce ease-in")) 
+            setFilteredCategories(mapCategory(displayedCategories," translate-x-400 ")) 
         }, 5000)
         
         //then execute on an interval 
@@ -38,25 +38,15 @@ export default function useFilterCategoriesByInterval(categories: ProductCategor
             iteration++; console.log(`iteration: ${iteration}`)
             if (iteration > max_iteration) iteration = 0;
         
-            console.log(`displayedCategories: ${displayedCategories}`)
             setFilteredCategories(mapCategory(displayedCategories, ""))
-            
+
             setTimeout(()=>{
-                setFilteredCategories(mapCategory(displayedCategories," animate-pulse")) 
+                setFilteredCategories(mapCategory(displayedCategories," translate-x-400 ")) 
             }, 5000)
 
         }, 6000)
 
-        // setInterval(()=>{
-                  
-        // }, 2000)
-        
-
-
-
-
         setIntervalExists(true);
-        console.log("paso interval")
         
     }, [categories])
 

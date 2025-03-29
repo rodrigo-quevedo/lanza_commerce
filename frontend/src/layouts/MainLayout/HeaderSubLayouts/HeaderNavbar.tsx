@@ -30,7 +30,7 @@ export default function HeaderNavbar(){
                 font-medium text-sm
                 bg-black
         ">
-            {(categories.length <= 5) ? mapCategory(categories) : filteredCategories  }
+            {(categories.length <= 5) ? mapCategory(categories, "") : filteredCategories  }
             
         </nav>
     )
