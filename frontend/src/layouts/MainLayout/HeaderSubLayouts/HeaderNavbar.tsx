@@ -1,5 +1,4 @@
 
-import { JSX, useEffect, useState } from "react";
 import { useFetchCategories } from "../../../hooks/useFetchCategories";
 import mapCategory from "../../../utils/map/mapCategories";
 import useFilterCategoriesByInterval from "../../../hooks/useFilterCategoriesByInterval";

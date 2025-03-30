@@ -3,7 +3,7 @@ export default function NotificationNumber({number, notificationClassName: class
     return (      
         <span 
             className={`
-                absolute bottom-6 left-6
+                absolute bottom-10 left-13 sm:bottom-6 sm:left-6
                 flex items-center justify-center
                 ${className}
                 text-black text-xs

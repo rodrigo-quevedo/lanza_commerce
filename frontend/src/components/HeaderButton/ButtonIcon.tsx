@@ -10,9 +10,10 @@ export default function ButtonIcon({children}: Props){
             className="
                 relative 
                 flex items-center justify-center
+                m-auto sm:m-0
                 w-10 h-10 
                 text-black hover:text-white
-                text-xl md:text-2xl
+                text-2xl sm:text-xl md:text-2xl
                 transition-all ease-out
         ">
             {children}
