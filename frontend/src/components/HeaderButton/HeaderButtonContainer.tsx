@@ -1,14 +1,17 @@
 import { ReactNode, useState } from "react";
 import NotificationNumber from "./NotificationNumber";
 import ButtonIcon from "./ButtonIcon";
+import ButtonText from "./ButtonText";
 
 type Props = NotificationNumberProps & {
-    iconElement: ReactNode
+    buttonIcon: ReactNode,
+    buttonText: string,
+    hide?: boolean
 }
 
 
 export default function HeaderButtonContainer(
-    {number, notificationClassName: className, iconElement}: Props
+    {notificationAmmount, buttonIcon, buttonText, hide}: Props
 ){
     
     const [isHovered, setIsHovered]= useState<boolean>(false);
@@ -18,19 +21,22 @@ export default function HeaderButtonContainer(
             aria-label="Notifications"
             onMouseEnter={()=>setIsHovered(true)}
             onMouseLeave={()=>setIsHovered(false)}
-            className=" 
+            className={` 
+                ${hide? "sm:hidden": ""}
                 mx-0.5 sm:mx-2
                 relative
                 bg-transparent rounded-full 
-                hover:cursor-pointer hover:scale-105 sm:hover:scale-110
+                hover:cursor-pointer sm:hover:scale-110
                 transition-all hover:transition-all
-        ">
+        `}>
              <ButtonIcon>
-                {iconElement}
+                {buttonIcon}
             </ButtonIcon>
 
-           {(number !== 0 && !isHovered)?
-                <NotificationNumber number={number} notificationClassName={className} />
+            <ButtonText text={buttonText} />
+
+           {(notificationAmmount !== 0 && !isHovered)?
+                <NotificationNumber notificationAmmount={notificationAmmount} notificationClassName={""} />
                 : 
                 null
             }

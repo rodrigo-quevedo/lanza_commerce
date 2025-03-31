@@ -8,34 +8,33 @@ export default function UtilityNav(){
 
     return (
         <div 
-            className=" absolute bottom-0 
-                        flex justify-around sm:justify-end 
-                        p-0 w-full 
-                        bg-neutral-200 sm:bg-transparent
+            className=" absolute bottom-0 sm:static
+                        flex justify-around sm:justify-end items-center
+                        p-0 w-full sm:w-fit
+                        bg-neutral-300 sm:bg-transparent
         ">
 
             <HeaderButtonContainer 
-                number={0} 
-                notificationClassName="bg-[#00f] text-black font-bold 
-                                        sm:bottom-6! sm:left-7! md:bottom-7! " 
-                iconElement={<FaHome/>} />
+                notificationAmmount={0}
+                buttonIcon={<FaHome/>} 
+                buttonText="Home" 
+                hide={true}/>
 
             <FlotaingNotificationButton
-                number={10}
+                notificationAmmount={10}
                 notificationClassName="bg-[#f00] text-white" 
                 iconElement={<IoIosNotifications/>}
-            />
+                buttonText="Notifications" />
 
             <HeaderButtonContainer 
-                number={4} 
-                notificationClassName="bg-[#0f0] text-black font-bold 
-                                        sm:bottom-6! sm:left-7! md:bottom-7! " 
-                iconElement={<FaShoppingCart/>} />
+                notificationAmmount={4} 
+                buttonIcon={<FaShoppingCart/>} 
+                buttonText="Cart" />
 
             <HeaderButtonContainer 
-                number={0} 
-                notificationClassName="hidden" 
-                iconElement={<FaUserAlt/>} />
+                notificationAmmount={0}
+                buttonIcon={<FaUserAlt/>} 
+                buttonText="Profile" />
         </div>
 
     )

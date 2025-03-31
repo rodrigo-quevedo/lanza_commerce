@@ -1,36 +1,39 @@
 import { ReactNode } from "react";
 import NotificationNumber from "./NotificationNumber";
 import ButtonIcon from "./ButtonIcon";
+import ButtonText from "./ButtonText";
 
 type Props = NotificationNumberProps & {
-    iconElement: ReactNode
+    notificationClassName: string,
+    iconElement: ReactNode,
+    buttonText: string
 }
 
 export default function FlotaingNotificationButton(
-    {number, notificationClassName: className, iconElement}: Props
+    {notificationAmmount, notificationClassName, iconElement, buttonText}: Props
 ){
     return (
-    <>{(number !== 0)? 
+    <>{(notificationAmmount !== 0)? 
         <button
             aria-label="Notifications"
             className=" 
                 relative
                 sm:absolute sm:bottom-9 sm:right-9
                 sm:bg-neutral-400 sm:rounded-full 
-                hover:bg-gray-500 hover:cursor-pointer hover:scale-110 
+                hover:cursor-pointer sm:hover:bg-gray-500 sm:hover:scale-110 
                 transition-all hover:transition-all
         ">
              <ButtonIcon>
                 {iconElement}
             </ButtonIcon>
-            <span
-                className="text-black 
-                            sm:hidden
-                "
-            >Notifications</span>
 
-            {(number !== 0)? 
-                <NotificationNumber number={number} notificationClassName={className} />
+            <ButtonText text={buttonText}/>
+
+            {(notificationAmmount !== 0)? 
+                <NotificationNumber 
+                    notificationAmmount={notificationAmmount} 
+                    notificationClassName={notificationClassName} />
+                
                 : 
                 null
             }

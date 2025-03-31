@@ -11,9 +11,9 @@ export default function ButtonIcon({children}: Props){
                 relative 
                 flex items-center justify-center
                 m-auto sm:m-0
-                w-10 h-10 
+                pt-2 sm:p-0
                 text-black hover:text-white
-                text-2xl sm:text-xl md:text-2xl
+                text-md sm:text-xl md:text-2xl
                 transition-all ease-out
         ">
             {children}
