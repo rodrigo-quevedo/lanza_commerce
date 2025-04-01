@@ -22,7 +22,9 @@ export default function UtilityNav(){
 
             <FlotaingNotificationButton
                 notificationAmmount={10}
-                notificationClassName="bg-[#f00] text-white" 
+                notificationClassName="sm:bg-[#f00]! sm:text-white!
+                                        left-9.5! sm:left-6.5! sm:bottom-5.5 md:bottom-7 
+                                        sm:w-4.5 sm:h-4.5" 
                 iconElement={<IoIosNotifications/>}
                 buttonText="Notifications" />
 

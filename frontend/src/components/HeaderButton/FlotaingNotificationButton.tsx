@@ -19,6 +19,7 @@ export default function FlotaingNotificationButton(
             className=" 
                 relative
                 sm:absolute sm:bottom-9 sm:right-9
+                sm:p-2
                 sm:bg-neutral-400 sm:rounded-full 
                 hover:cursor-pointer sm:hover:bg-gray-500 sm:hover:scale-110 
                 transition-all hover:transition-all

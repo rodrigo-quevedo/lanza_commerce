@@ -23,7 +23,7 @@ export default function HeaderButtonContainer(
             onMouseLeave={()=>setIsHovered(false)}
             className={` 
                 ${hide? "sm:hidden": ""}
-                mx-0.5 sm:mx-2
+                mx-0.5 sm:mx-2 md:mx-3
                 relative
                 bg-transparent rounded-full 
                 hover:cursor-pointer sm:hover:scale-110

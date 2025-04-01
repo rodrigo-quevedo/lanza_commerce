@@ -9,11 +9,12 @@ export default function NotificationNumber(
     return (      
         <span 
             className={`
-                absolute bottom-10 left-13 sm:bottom-6 sm:left-6
-                flex items-center justify-center
+                absolute bottom-8 left-5 sm:bottom-4.5 sm:left-4.5 md:bottom-5 md:left-5.5
+                flex items-center justify-center text-center
                 ${notificationClassName}
-                text-black text-xs
-                w-5 h-5 rounded-full 
+                bg-[#A61713] sm:bg-white
+                text-white sm:text-black text-[10px]  sm:text-xs sm:font-bold    
+                w-3.5 h-3.5 md:w-4 md:h-4 rounded-full 
         `}>
             {number}
         </span>
