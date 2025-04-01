@@ -1,7 +1,7 @@
 import { ReactNode, useState } from "react";
-import NotificationNumber from "./NotificationNumber";
-import ButtonIcon from "./ButtonIcon";
-import ButtonText from "./ButtonText";
+import NotificationNumber from "../Subcomponents/NotificationNumber";
+import ButtonIcon from "../Subcomponents/ButtonIcon";
+import ButtonText from "../Subcomponents/ButtonText";
 
 type Props = NotificationNumberProps & {
     buttonIcon: ReactNode,
@@ -35,8 +35,8 @@ export default function HeaderButtonContainer(
 
             <ButtonText text={buttonText} />
 
-           {(notificationAmmount !== 0 && !isHovered)?
-                <NotificationNumber notificationAmmount={notificationAmmount} notificationClassName={""} />
+           {(notificationAmmount !== 0)?
+                <NotificationNumber notificationAmmount={notificationAmmount} notificationClassName={isHovered?" sm:hidden ": ""} />
                 : 
                 null
             }

@@ -12,7 +12,7 @@ export default function ButtonIcon({children}: Props){
                 flex items-center justify-center
                 m-auto sm:m-0
                 pt-2 sm:p-0
-                text-black hover:text-white
+                text-black sm:hover:text-white
                 text-md sm:text-xl md:text-2xl
                 transition-all ease-out
         ">

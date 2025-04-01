@@ -1,7 +1,5 @@
 import Logo from "../../../components/Logo";
 import Searchbox from "../../../components/Searchbox";
-import { IoIosNotifications } from "react-icons/io";
-import FlotaingNotificationButton from "../../../components/HeaderButton/FlotaingNotificationButton";
 import UtilityNav from "./UtilityNav";
 
 
