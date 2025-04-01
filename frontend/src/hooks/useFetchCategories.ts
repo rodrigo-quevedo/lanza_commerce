@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react";
 
-export function useFetchCategories() {
+export default function useFetchCategories() {
     const [categories, setCategories] = useState<ProductCategory[]>([]);
     const [fetchState, setFetchState] = useState<FetchState>({
-        loading: true, //when component mounts, it is loading untill fetch is done
+        loading: true, //when component mounts, it is loading until fetch is done
         error: null
     });
     

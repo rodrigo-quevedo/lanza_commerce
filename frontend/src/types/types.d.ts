@@ -2,8 +2,6 @@ type NotificationNumberProps = {
     notificationAmmount: number
 }
 
-
-
 interface ProductCategory {
     id: number,
     name: string,
