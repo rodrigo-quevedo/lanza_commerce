@@ -11,7 +11,7 @@ export default function Searchbox(){
             className={`
                 flex flex-1
                 mx-2 
-                max-w-[80%] sm:max-w-2xl h-8 sm:h-10
+                max-w-2xl h-8 sm:h-10
                 ${selected? "scale-103 md:scale-102": ''}
                 transition ease-out duration-500
         `}>
@@ -23,7 +23,8 @@ export default function Searchbox(){
                 onClick={()=>{setSelected(true)}}
                 onBlur={()=>{setSelected(false)}}
                 className={`
-                    flex-grow 
+                    flex-1!
+                    min-w-0! w-0!
                     px-3 
                     rounded-l-4xl 
                     border-1 border-white
@@ -37,7 +38,7 @@ export default function Searchbox(){
                 className={`
                     hover:cursor-pointer
                     box-border
-                    px-4 py-2 
+                    px-[3.5vw] py-2 sm:px-4
                     font-medium text-sm sm:text-base
                     rounded-r-4xl border-white border-1 border-l-0
                     text-white 

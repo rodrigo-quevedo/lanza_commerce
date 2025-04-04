@@ -5,14 +5,14 @@ export default function Logo(){
         <Link 
             to="/"
             className="
-                hidden sm: static
+                shrink-0
                 sm:flex items-center 
                 mx-auto md:mx-0
         ">
             <img 
                 src="../../public/logo.png" 
                 alt="Website logo"
-                className="h-12 sm:h-16"/>
+                className="min-h-10 h-[10vw] sm:h-16"/>
             
             <h1 
                 className="
