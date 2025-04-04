@@ -20,14 +20,14 @@ export default function HeaderNavbar(){
 
     if (fetchState.loading){
         className = `flex justify-center items-center 
-                        p-1 
-                        bg-black text-white`
+                    p-1 
+                    bg-black text-white`
         content = <span className="animate-pulse">Loading categories...</span>
     }
 
     if (fetchState.error){
         className = `flex justify-center items-center 
-                        bg-black text-red-500`
+                    bg-black text-red-500`
         content = <span>Error: ${fetchState.error}</span>
     }
 

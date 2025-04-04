@@ -11,7 +11,7 @@ export default function Searchbox(){
             className={`
                 flex flex-1
                 mx-2 
-                max-w-2xl sm:h-10
+                max-w-[80%] sm:max-w-2xl h-8 sm:h-10
                 ${selected? "scale-103 md:scale-102": ''}
                 transition ease-out duration-500
         `}>

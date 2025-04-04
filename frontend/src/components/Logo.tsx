@@ -5,9 +5,9 @@ export default function Logo(){
         <Link 
             to="/"
             className="
-                flex items-center 
-                mx-auto
-                md:mx-0
+                hidden sm: static
+                sm:flex items-center 
+                mx-auto md:mx-0
         ">
             <img 
                 src="../../public/logo.png" 
