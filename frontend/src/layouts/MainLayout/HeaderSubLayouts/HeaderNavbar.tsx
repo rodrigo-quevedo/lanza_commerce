@@ -9,25 +9,32 @@ export default function HeaderNavbar(){
     const { categories, fetchState } = useFetchCategories();
     const { filteredCategories } = useFilterCategoriesByInterval(categories);
 
-    
-    let className = `flex justify-around items-center 
+    console.log(categories)
+
+    //common styles for every state
+    let className = `hidden 
+                    sm:flex justify-around items-center 
+                    overflow-hidden
+                    p-1 
+                    max-h-7
                     font-medium text-sm
-                    bg-black`;
+                    bg-black text-white`
+
+    // success
+    className += ``;
     let content: JSX.Element[] | undefined | JSX.Element   
         = (categories.length <= 5) ? mapCategory(categories, "") : filteredCategories
 
 
-
+    //loading
     if (fetchState.loading){
-        className = `flex justify-center items-center 
-                    p-1 
-                    bg-black text-white`
+        className += ` `
         content = <span className="animate-pulse">Loading categories...</span>
     }
 
+    //error
     if (fetchState.error){
-        className = `flex justify-center items-center 
-                    bg-black text-red-500`
+        className += `text-red-500!`
         content = <span>Error: ${fetchState.error}</span>
     }
 
