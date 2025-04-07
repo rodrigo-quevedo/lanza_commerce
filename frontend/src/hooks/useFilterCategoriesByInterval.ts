@@ -27,7 +27,7 @@ export default function useFilterCategoriesByInterval(categories: ProductCategor
 
         setTimeout(()=>{
             setFilteredCategories(mapCategory(displayedCategories," translate-x-400 ")) 
-        }, 5000)
+        }, 15000)
         
         //then execute on an interval 
         //I'm having trouble updating 'iteration' and 'max_iteration' by reference (args 
@@ -44,7 +44,7 @@ export default function useFilterCategoriesByInterval(categories: ProductCategor
                 setFilteredCategories(mapCategory(displayedCategories," translate-x-400 ")) 
             }, 5000)
 
-        }, 6000)
+        }, 16000)
 
         setIntervalExists(true);
         

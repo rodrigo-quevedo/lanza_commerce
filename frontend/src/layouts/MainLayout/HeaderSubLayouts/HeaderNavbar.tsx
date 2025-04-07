@@ -17,16 +17,30 @@ export default function HeaderNavbar(){
         let hamburger_button = document.getElementById("nav__hamburger-button")
         let nav_overlay = document.getElementById("nav__overlay")
         let nav_mobile = document.getElementById("mobile-nav")
+        let close_button = document.getElementById("nav__close-button")
 
-        if (hamburger_button !== null)
-            hamburger_button.addEventListener('click', ()=>{
-                setMobileMenu(true);
-                hamburger_button.classList.toggle('hidden')
-                nav_overlay?.classList.toggle('invisible')
-                nav_mobile?.classList.toggle("-translate-x-full")
-                nav_mobile?.classList.toggle("opacity-0")
-            })
-    })
+        let handleClick = (e: MouseEvent)=>{
+            console.log('hamburger or close button click')
+            
+            setMobileMenu(!mobileMenu);
+            hamburger_button?.classList.toggle('invisible')
+            nav_overlay?.classList.toggle('invisible')
+            nav_mobile?.classList.toggle("-translate-x-full")
+            nav_mobile?.classList.toggle("opacity-0")
+        }
+        
+        hamburger_button?.addEventListener('click', handleClick)
+        close_button?.addEventListener('click', handleClick)
+        
+        //On development mode, react executes 2 times the useEffect, so there'll be 2 event listeners.
+        //But when react executes the useEffect 2 times, it has to unmount the component from the first execution.
+        //So we just have to remove the event listener of that first execution component.
+        return () => {
+            hamburger_button?.removeEventListener('click', handleClick)
+            close_button?.removeEventListener('click', handleClick)
+
+        };
+    }, [])
 
 
 
@@ -70,6 +84,7 @@ export default function HeaderNavbar(){
 
             <div id="nav__overlay" 
                 className={`
+                    z-10
                     fixed top-0 left-0 sm:hidden
                     invisible
                     h-screen w-screen
@@ -79,6 +94,7 @@ export default function HeaderNavbar(){
 
             <span id="nav__hamburger-button" 
                 className={`sm:hidden 
+                        z-100
                         absolute left-2 
                         hover:cursor-pointer
                         text-2xl
@@ -90,11 +106,32 @@ export default function HeaderNavbar(){
             
             <nav id="mobile-nav" 
                 className={`
-                    fixed 
+                    sm:hidden
+                    absolute top-0
+                    z-20
                     -translate-x-full opacity-0 
-                    h-full w-40
-                    bg-black text-white
+                    transition-all duration-400
+                    h-full w-1/2
+                    bg-white text-black
+                    flex flex-col
+                    overflow-hidden
             `}>
+                <span id="nav__close-button"
+                    className={`
+                        z-30
+                        absolute right-0.5 top-0.5                         
+                        bg-neutral-200
+                        text-2xl
+                        w-10 h-10
+                        rounded-full
+                        transition-all duration-200
+                        hover:cursor-pointer hover:bg-neutral-400
+                `}>
+                    <span className="absolute top-[1px] right-[11.4px]">
+                        &times;
+                    </span>
+                </span>
+                
                 {content}
             </nav>
                 
