@@ -2,47 +2,19 @@ import { JSX, useEffect, useState } from "react";
 import { GiHamburgerMenu } from "react-icons/gi";
 import useFetchCategories  from "../../../hooks/useFetchCategories";
 import useFilterCategoriesByInterval from "../../../hooks/useFilterCategoriesByInterval";
-import mapCategory from "../../../utils/map/mapCategories";
+import mapCategory from "../../../utils/nav_categories/mapCategories";
+import useSetupMobileNavbar from "../../../hooks/useSetupMobileNavbar";
 
 
 export default function HeaderNavbar(){
 
     const { categories, fetchState } = useFetchCategories();
-    const { filteredCategories } = useFilterCategoriesByInterval(categories);
+    const { filteredCategories } = useFilterCategoriesByInterval(categories, 8000);
     const [mobileMenu, setMobileMenu] = useState<boolean>(false);
+    
+    // if (import.meta.env.DEV) console.log(categories)
 
-    console.log(categories)
-
-    useEffect(()=>{
-        let hamburger_button = document.getElementById("nav__hamburger-button")
-        let nav_overlay = document.getElementById("nav__overlay")
-        let nav_mobile = document.getElementById("mobile-nav")
-        let close_button = document.getElementById("nav__close-button")
-
-        let handleClick = (e: MouseEvent)=>{
-            console.log('hamburger or close button click')
-            
-            setMobileMenu(!mobileMenu);
-            hamburger_button?.classList.toggle('invisible')
-            nav_overlay?.classList.toggle('invisible')
-            nav_mobile?.classList.toggle("-translate-x-full")
-            nav_mobile?.classList.toggle("opacity-0")
-        }
-        
-        hamburger_button?.addEventListener('click', handleClick)
-        close_button?.addEventListener('click', handleClick)
-        
-        //On development mode, react executes 2 times the useEffect, so there'll be 2 event listeners.
-        //But when react executes the useEffect 2 times, it has to unmount the component from the first execution.
-        //So we just have to remove the event listener of that first execution component.
-        return () => {
-            hamburger_button?.removeEventListener('click', handleClick)
-            close_button?.removeEventListener('click', handleClick)
-
-        };
-    }, [])
-
-
+    useSetupMobileNavbar(setMobileMenu)
 
     //common styles for every state
     let className = `hidden
@@ -111,7 +83,7 @@ export default function HeaderNavbar(){
                     z-20
                     -translate-x-full opacity-0 
                     transition-all duration-400
-                    h-full w-1/2
+                    h-full w-1/2 min-w-55
                     bg-white text-black
                     flex flex-col
                     overflow-hidden
