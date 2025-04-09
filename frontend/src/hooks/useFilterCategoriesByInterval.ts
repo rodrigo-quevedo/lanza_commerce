@@ -1,50 +1,36 @@
 import { JSX, useEffect, useState } from "react";
-import mapCategory from "../utils/map/mapCategories";
+import displayCategories from "../utils/nav_categories/displayCategories";
 
 
-export default function useFilterCategoriesByInterval(categories: ProductCategory[]) {
+export default function useFilterCategoriesByInterval(categories: ProductCategory[], interval_milliseconds: number) {
     const [ filteredCategories, setFilteredCategories ] = useState<JSX.Element[]>();
     const [intervalExists, setIntervalExists] = useState<boolean>(false);
-    // const [animationStr, setAnimationStr] = useState<string>("");    
+    
 
     let iteration: number = 0;
     let max_iteration: number = 0;
 
     
     useEffect( ()=>{
+        //max_iteration is always >= 1 (so at least 2 iterations)
         if (categories.length === 0 || categories.length <=5 || intervalExists) return;
         
-        max_iteration = Math.trunc(categories.length / 5)
+        max_iteration = Math.trunc(
+            (categories.length - 1) //fix multiples of 5 (10, 15, etc.), otherwise they will add an unnecesary iteration (e.g. 10/2 gives a max_iteration = 2, but for 10 elements I only need max_iteration = 1). This happens because categories.length is 1 ahead of iteration, the latter begins at 0.
+            / 5) 
+        
                 
         //execute first time (bc interval doesn't have immediate effect)
-        let displayedCategories: ProductCategory[] 
-            = categories.slice(iteration*5, iteration*5+5)
-
-        iteration++;
-        if (iteration >= max_iteration) iteration = 0;
-        
-        setFilteredCategories(mapCategory(displayedCategories, ""))    
-
-        setTimeout(()=>{
-            setFilteredCategories(mapCategory(displayedCategories," translate-x-400 ")) 
-        }, 15000)
+        displayCategories(categories, iteration, interval_milliseconds, setFilteredCategories)
         
         //then execute on an interval 
-        //I'm having trouble updating 'iteration' and 'max_iteration' by reference (args 
-        // of a modularized function), so I'll just duplicate this code for now
         setInterval(()=>{
-            let displayedCategories: ProductCategory[] = categories.slice(iteration*5, iteration*5+5)
+            iteration++;
+            if (iteration > max_iteration) iteration = 0;
             
-            iteration++; 
-            if (iteration >= max_iteration) iteration = 0;
-        
-            setFilteredCategories(mapCategory(displayedCategories, ""))
+            displayCategories(categories, iteration, interval_milliseconds, setFilteredCategories)
 
-            setTimeout(()=>{
-                setFilteredCategories(mapCategory(displayedCategories," translate-x-400 ")) 
-            }, 5000)
-
-        }, 16000)
+        }, interval_milliseconds)
 
         setIntervalExists(true);
         
