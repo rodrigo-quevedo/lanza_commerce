@@ -1,6 +1,6 @@
-import Logo from "../../../components/Logo";
-import Searchbox from "../../../components/Searchbox";
-import UtilityNav from "./UtilityNav";
+import Logo from "./components/Logo";
+import Searchbox from "./components/Searchbox";
+import UtilityNav from "../UtilityNav";
 
 
 export default function HeaderTop(){

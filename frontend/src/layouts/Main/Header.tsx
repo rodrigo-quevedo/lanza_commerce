@@ -1,5 +1,5 @@
-import HeaderNavbar from "./HeaderSubLayouts/HeaderNavbar";
-import HeaderTop from "./HeaderSubLayouts/HeaderTop";
+import HeaderNavbar from "./Header/Navbar/HeaderNavbar";
+import HeaderTop from "./Header/HeaderTop/HeaderTop";
 
 
 

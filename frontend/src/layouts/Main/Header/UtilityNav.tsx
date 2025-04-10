@@ -1,6 +1,6 @@
 import { FaHome, FaShoppingCart, FaUserAlt } from "react-icons/fa";
-import HeaderButtonContainer from "../../../components/UtilityNavButton/Containers/HeaderButtonContainer";
-import FlotaingNotificationButton from "../../../components/UtilityNavButton/Containers/FlotaingNotificationButton";
+import HeaderButtonContainer from "./HeaderTop/components/UtilityNavButton/HeaderButtonContainer";
+import FlotaingNotificationButton from "./HeaderTop/components/UtilityNavButton/FlotaingNotificationButton";
 import { IoIosNotifications } from "react-icons/io";
 
 

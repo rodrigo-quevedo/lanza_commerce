@@ -1,7 +1,7 @@
 import {BrowserRouter, Routes, Route } from 'react-router'
 
 import Home from './pages/Home'
-import MainLayout from './layouts/MainLayout/MainLayout'
+import MainLayout from './layouts/Main/MainLayout'
 
 
 function App() {

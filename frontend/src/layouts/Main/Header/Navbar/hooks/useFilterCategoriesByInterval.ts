@@ -1,5 +1,5 @@
 import { JSX, useEffect, useState } from "react";
-import displayCategories from "../utils/nav_categories/displayCategories";
+import displayCategories from "../../../../../utils/nav_categories/displayCategories";
 
 
 export default function useFilterCategoriesByInterval(categories: ProductCategory[], interval_milliseconds: number) {

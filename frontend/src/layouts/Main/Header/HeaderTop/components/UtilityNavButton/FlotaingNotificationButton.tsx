@@ -1,7 +1,7 @@
 import { ReactNode } from "react";
-import NotificationNumber from "../Subcomponents/NotificationNumber";
-import ButtonIcon from "../Subcomponents/ButtonIcon";
-import ButtonText from "../Subcomponents/ButtonText";
+import NotificationNumber from "./components/NotificationNumber";
+import ButtonIcon from "./components/ButtonIcon";
+import ButtonText from "./components/ButtonText";
 
 type Props = NotificationNumberProps & {
     notificationClassName: string,
