@@ -15,7 +15,8 @@ export default function MobileNavbar({content}: Props) {
                 transition-all duration-400
                 h-full w-1/2 min-w-55
                 bg-white text-black
-                flex flex-col
+                flex flex-col 
+                pt-5 pb-5 pl-7
                 overflow-hidden
         `}>
             <span id="nav__close-button"
@@ -29,11 +30,20 @@ export default function MobileNavbar({content}: Props) {
                     transition-all duration-200
                     hover:cursor-pointer hover:bg-neutral-400
             `}>
+                {/* This one below is there to center the x */}
                 <span className="absolute top-[1px] right-[11.4px]">
                     &times;
                 </span>
             </span>
-        
+
+            <p className="
+                mt-6 mb-5
+                font-bold 
+                
+            ">
+                Categories
+            </p>                
+
           {content}
         </nav>
     )

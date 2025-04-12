@@ -12,6 +12,7 @@ export default function useSetupMobileNavbar(
 
         // I can't take out these functions because I can't change the parameter (e: MouseEvent)
         let handleClick = ()=> {
+            hamburger_button?.classList.toggle('invisible')
             nav_overlay?.classList.toggle('invisible')
             nav_mobile?.classList.toggle("-translate-x-full")
             nav_mobile?.classList.toggle("opacity-0")
