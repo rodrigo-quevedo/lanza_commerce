@@ -16,8 +16,8 @@ export default function MobileNavbar({content}: Props) {
                 h-full w-1/2 min-w-55
                 bg-white text-black
                 flex flex-col 
-                pt-5 pb-5 pl-7
-                overflow-hidden
+                pt-5 pb-30 pl-7
+                overflow-x-hidden overflow-y-auto
         `}>
             <span id="nav__close-button"
                 className={`

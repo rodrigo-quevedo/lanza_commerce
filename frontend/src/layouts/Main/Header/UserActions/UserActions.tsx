@@ -2,6 +2,7 @@ import { FaHome, FaShoppingCart, FaUserAlt } from "react-icons/fa";
 import HeaderButtonContainer from "./components/UserActionButton/HeaderButtonContainer";
 import FlotaingNotificationButton from "./components/UserActionButton/FlotaingNotificationButton";
 import { IoIosNotifications } from "react-icons/io";
+import AuthButton from "./components/UserActionButton/AuthButton";
 
 
 export default function UserActions({isAuth}: ReadAuthProps){
@@ -42,9 +43,11 @@ export default function UserActions({isAuth}: ReadAuthProps){
                 </>
                 :
                 <>
-                    
-                </>
-                }
+                    <AuthButton text="Login" primary={true}/>
+
+                    <AuthButton text="Sign Up"/>
+            </>
+            }
             
         </div>
 
