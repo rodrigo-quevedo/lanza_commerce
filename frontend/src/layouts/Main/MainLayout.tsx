@@ -3,10 +3,10 @@ import { Outlet } from "react-router";
 import Footer from "./Footer";
 
 
-function MainLayout() {
+function MainLayout({isAuth, setIsAuth}:AuthProps) {
     return (
         <>
-            <Header/>
+            <Header isAuth={isAuth}/>
 
             <Outlet/>
             

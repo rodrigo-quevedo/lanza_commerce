@@ -1,9 +1,9 @@
-import Logo from "./components/Logo";
-import Searchbox from "./components/Searchbox";
-import UtilityNav from "../UtilityNav";
+import Logo from "../UserActions/components/Logo/Logo";
+import Searchbox from "../UserActions/components/Searchbox/Searchbox";
+import UserActions from "../UserActions/UserActions";
 
 
-export default function HeaderTop(){
+export default function HeaderTop({isAuth}: ReadAuthProps){
     return (
         <div className="flex justify-between items-center 
                         sm:px-4 
@@ -12,8 +12,8 @@ export default function HeaderTop(){
             <Logo/>
 
             <Searchbox/>
- 
-            <UtilityNav/>
+            
+            <UserActions isAuth={isAuth}/>
             
         </div>
     )

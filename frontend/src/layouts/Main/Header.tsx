@@ -3,12 +3,13 @@ import HeaderTop from "./Header/HeaderTop/HeaderTop";
 
 
 
-function Header() {
+function Header({isAuth}: ReadAuthProps) {
     return (
         <header className="bg-[#A61713] text-white
                             border-b border-gray-200
         ">
-            <HeaderTop/>
+            <HeaderTop isAuth={isAuth}/>
+            
             <HeaderNavbar/>
         </header>
     )
