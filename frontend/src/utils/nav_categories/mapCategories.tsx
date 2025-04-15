@@ -14,7 +14,7 @@ export default function mapCategory(
                             
                             sm:p-0 sm:hover:m-0 sm:hover:p-0 
 
-                            hover:border-l-6 hover:border-l-[#A61713]
+                            hover:border-l-6 hover:border-l-[#A61713] sm:hover:border-none
                             hover:scale-110 hover:font-bold hover:text-[#A61713] 
                             transition-all hover:transition-all 
                             ${animationStr}

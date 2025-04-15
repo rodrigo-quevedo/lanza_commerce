@@ -10,6 +10,20 @@ interface ProductCategory {
     updatedAt: string
 }
 
+interface Product {
+    id: number,
+    title: string,
+    slug: string,
+    price: number,
+    description: string,
+    category: {id: number},
+    images: string[]//urls
+}
+
+type ProductProps = {
+    product: Product
+}
+
 interface FetchState {
     loading: boolean,
     error: string | null
