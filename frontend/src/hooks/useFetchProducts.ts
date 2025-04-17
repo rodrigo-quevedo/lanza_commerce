@@ -12,7 +12,7 @@ export default function useFetchProducts() {
         .then(res=>res.json())
         
         .then(data=>{
-            if (import.meta.env.DEV) console.log(data)
+            // if (import.meta.env.DEV) console.log(data)
 
             setProducts(data);
             setFetchState({

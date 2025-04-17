@@ -12,7 +12,7 @@ export default function useFetchCategories() {
         .then(res=>res.json())
         
         .then(data=>{
-            if (import.meta.env.DEV) console.log(data)
+            // if (import.meta.env.DEV) console.log(data)
 
             setCategories(data);
             setFetchState({
